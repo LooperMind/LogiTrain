@@ -1,0 +1,568 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Process" version="4">
+  <OBJECT>
+    <ID name="Process" mc="Standard.BpmnProcess" uid="6f9b3631-106e-4251-85f3-b587965afd86"/>
+    <PID name="railroad" mc="Standard.Package" uid="082e1c2f-6028-4238-b23c-c91132df3126"/>
+    <ATTRIBUTES>
+      <ATT name="ProcessType">NoneProcess</ATT>
+      <ATT name="IsClosed">false</ATT>
+      <ATT name="IsExecutable">OUndefined</ATT>
+      <ATT name="IsReentrant">false</ATT>
+      <ATT name="Name"><![CDATA[Process]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="LaneSet">
+        <OBJECT>
+          <ID name="" mc="Standard.BpmnLaneSet" uid="9a311636-d6d5-44e1-b840-e0190126d1ed"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Lane">
+              <OBJECT>
+                <ID name="Вычислительный сервер" mc="Standard.BpmnLane" uid="b9d37f8d-a417-4e73-b831-7a5cdb1dee69"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Вычислительный сервер]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="FlowElementRef">
+                    <REFOBJ>
+                      <ID name="Составить запрос на сбор данных со станций" mc="Standard.BpmnTask" uid="989e9345-7fe2-42fa-b905-3fb7bed584f2"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Проверить данные со станций на корректность" mc="Standard.BpmnTask" uid="49752594-03b5-4d7f-8e3b-2c83dae0ede7"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Exclusive Gateway" mc="Standard.BpmnExclusiveGateway" uid="60f7d877-20be-4f0f-8e7c-d57a769c8d8d"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Составить повторный запрос на сбор данных" mc="Standard.BpmnTask" uid="3527f95f-ae9c-4e34-a6a1-78868154f34f"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Запрос на составление расписания" mc="Standard.BpmnStartEvent" uid="8f351d68-8144-413e-8f8b-7f8cc7c30d7c"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Простой системы &gt; заданного" mc="Standard.BpmnStartEvent" uid="bb859c86-ef61-423e-8cdb-c0adbd281c48"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Сеть для связи участников Ж/Д логистики" mc="Standard.BpmnLane" uid="bf5695d2-46b3-4d64-9d3f-d9fce7882e75"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Сеть для связи участников Ж/Д логистики]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="FlowElementRef">
+                    <REFOBJ>
+                      <ID name="Отправить запрос на отправку данных со станций" mc="Standard.BpmnTask" uid="e67aa93a-e0bf-431d-9c10-c7eea3d8cf5e"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Получить данные со станций" mc="Standard.BpmnTask" uid="4a0f75ea-6c28-439a-8cca-61073a225f32"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Данные о нехватке/избытке товаров на станциях" mc="Standard.BpmnDataObject" uid="c898a3f6-9b3f-48fa-8e14-ddf472c3e2ce"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="База данных и СУБД" mc="Standard.BpmnLane" uid="720d5a0a-758d-4c04-9333-1fbf4bb37d98"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[База данных и СУБД]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="FlowElementRef">
+                    <REFOBJ>
+                      <ID name="Записать данные" mc="Standard.BpmnTask" uid="806951cf-0c90-42aa-b09c-2b93139e5fb5"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Данные о нехватке/избытке товаров на станциях" mc="Standard.BpmnDataObject" uid="d7f3551a-198e-4da8-9a04-c1d00941cc35"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Данные со станций собраны" mc="Standard.BpmnEndEvent" uid="aecce1b5-d33b-4a69-93c1-5518dbaf5748"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="FlowElement">
+        <OBJECT>
+          <ID name="Составить запрос на сбор данных со станций" mc="Standard.BpmnTask" uid="989e9345-7fe2-42fa-b905-3fb7bed584f2"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Составить запрос на сбор данных со станций]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Отправить запрос на отправку данных со станций" mc="Standard.BpmnTask" uid="e67aa93a-e0bf-431d-9c10-c7eea3d8cf5e"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Отправить запрос на отправку данных со станций]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f1" mc="Standard.BpmnSequenceFlow" uid="cf0c793b-b82e-443d-af9f-0f0243650c67"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Составить запрос на сбор данных со станций" mc="Standard.BpmnTask" uid="989e9345-7fe2-42fa-b905-3fb7bed584f2"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Exclusive Gateway" mc="Standard.BpmnExclusiveGateway" uid="60f7d877-20be-4f0f-8e7c-d57a769c8d8d"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Записать данные" mc="Standard.BpmnTask" uid="806951cf-0c90-42aa-b09c-2b93139e5fb5"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Записать данные]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Проверить данные со станций на корректность" mc="Standard.BpmnTask" uid="49752594-03b5-4d7f-8e3b-2c83dae0ede7"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Проверить данные со станций на корректность]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DataOutputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="6dfd92ae-0f26-4b8a-8c3f-764c5917a3c2"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="TargetRef">
+                    <REFOBJ>
+                      <ID name="Алгоритмы сбора и обработки данных со станций" mc="Standard.BpmnDataInput" uid="40a7d5c1-a815-4547-b3c4-cb291b363529"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="DefaultFlow">
+              <REFOBJ>
+                <ID name="f3" mc="Standard.BpmnSequenceFlow" uid="676d38bb-fa98-4924-b776-8cf8414dc3a8"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f3" mc="Standard.BpmnSequenceFlow" uid="676d38bb-fa98-4924-b776-8cf8414dc3a8"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f3]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Проверить данные со станций на корректность" mc="Standard.BpmnTask" uid="49752594-03b5-4d7f-8e3b-2c83dae0ede7"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Записать данные" mc="Standard.BpmnTask" uid="806951cf-0c90-42aa-b09c-2b93139e5fb5"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Данные о нехватке/избытке товаров на станциях" mc="Standard.BpmnDataObject" uid="d7f3551a-198e-4da8-9a04-c1d00941cc35"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Данные о нехватке/избытке товаров на станциях]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DependsOnDependency">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Dependency" uid="804fcf7d-d8f9-4c92-90e6-fa9ab13d32c4"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="DependsOn">
+                    <REFOBJ>
+                      <ID name="f3" mc="Standard.BpmnSequenceFlow" uid="676d38bb-fa98-4924-b776-8cf8414dc3a8"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Получить данные со станций" mc="Standard.BpmnTask" uid="4a0f75ea-6c28-439a-8cca-61073a225f32"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Получить данные со станций]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f2" mc="Standard.BpmnSequenceFlow" uid="3288ef6a-132b-4ac9-b750-e1bdbadafd14"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Отправить запрос на отправку данных со станций" mc="Standard.BpmnTask" uid="e67aa93a-e0bf-431d-9c10-c7eea3d8cf5e"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Получить данные со станций" mc="Standard.BpmnTask" uid="4a0f75ea-6c28-439a-8cca-61073a225f32"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f4" mc="Standard.BpmnSequenceFlow" uid="a691234e-0e7f-4b7a-835e-e2b459804920"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f4]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Получить данные со станций" mc="Standard.BpmnTask" uid="4a0f75ea-6c28-439a-8cca-61073a225f32"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Проверить данные со станций на корректность" mc="Standard.BpmnTask" uid="49752594-03b5-4d7f-8e3b-2c83dae0ede7"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Данные о нехватке/избытке товаров на станциях" mc="Standard.BpmnDataObject" uid="c898a3f6-9b3f-48fa-8e14-ddf472c3e2ce"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Данные о нехватке/избытке товаров на станциях]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DependsOnDependency">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.Dependency" uid="6ff2754d-ac5e-4062-8cda-35e6aee53eb0"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="DependsOn">
+                    <REFOBJ>
+                      <ID name="f4" mc="Standard.BpmnSequenceFlow" uid="a691234e-0e7f-4b7a-835e-e2b459804920"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Exclusive Gateway" mc="Standard.BpmnExclusiveGateway" uid="60f7d877-20be-4f0f-8e7c-d57a769c8d8d"/>
+          <ATTRIBUTES>
+            <ATT name="GatewayDirection">UnspecifiedDirection</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Exclusive Gateway]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f5" mc="Standard.BpmnSequenceFlow" uid="a63fa1e8-9f3c-4606-b1cb-14e3e01110fe"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f5]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Exclusive Gateway" mc="Standard.BpmnExclusiveGateway" uid="60f7d877-20be-4f0f-8e7c-d57a769c8d8d"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Отправить запрос на отправку данных со станций" mc="Standard.BpmnTask" uid="e67aa93a-e0bf-431d-9c10-c7eea3d8cf5e"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f6" mc="Standard.BpmnSequenceFlow" uid="d2584df4-c481-42de-b8c7-5b05e3c3dfeb"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"><![CDATA[Ошибка при получении данных]]></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f6]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Проверить данные со станций на корректность" mc="Standard.BpmnTask" uid="49752594-03b5-4d7f-8e3b-2c83dae0ede7"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Составить повторный запрос на сбор данных" mc="Standard.BpmnTask" uid="3527f95f-ae9c-4e34-a6a1-78868154f34f"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Составить повторный запрос на сбор данных" mc="Standard.BpmnTask" uid="3527f95f-ae9c-4e34-a6a1-78868154f34f"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Составить повторный запрос на сбор данных]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f7" mc="Standard.BpmnSequenceFlow" uid="e8ca93d1-d21d-4a90-b97e-31db8a328dcd"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f7]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Составить повторный запрос на сбор данных" mc="Standard.BpmnTask" uid="3527f95f-ae9c-4e34-a6a1-78868154f34f"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Exclusive Gateway" mc="Standard.BpmnExclusiveGateway" uid="60f7d877-20be-4f0f-8e7c-d57a769c8d8d"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Алгоритмы сбора и обработки данных со станций" mc="Standard.BpmnDataInput" uid="40a7d5c1-a815-4547-b3c4-cb291b363529"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Алгоритмы сбора и обработки данных со станций]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Запрос на составление расписания" mc="Standard.BpmnStartEvent" uid="8f351d68-8144-413e-8f8b-7f8cc7c30d7c"/>
+          <ATTRIBUTES>
+            <ATT name="IsInterrupting">true</ATT>
+            <ATT name="ParallelMultiple">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Запрос на составление расписания]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="EventDefinitions">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnSignalEventDefinition" uid="ab746963-68e3-467d-8b21-c79c3e470f2f"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f" mc="Standard.BpmnSequenceFlow" uid="6014b2d4-ef63-44bf-8e19-16362b898093"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Запрос на составление расписания" mc="Standard.BpmnStartEvent" uid="8f351d68-8144-413e-8f8b-7f8cc7c30d7c"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Составить запрос на сбор данных со станций" mc="Standard.BpmnTask" uid="989e9345-7fe2-42fa-b905-3fb7bed584f2"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Простой системы &gt; заданного" mc="Standard.BpmnStartEvent" uid="bb859c86-ef61-423e-8cdb-c0adbd281c48"/>
+          <ATTRIBUTES>
+            <ATT name="IsInterrupting">true</ATT>
+            <ATT name="ParallelMultiple">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Простой системы > заданного]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="EventDefinitions">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnTimerEventDefinition" uid="b5f4f7ea-611c-4953-b9b8-6a29d11d100a"/>
+                <ATTRIBUTES>
+                  <ATT name="TimeCycle"></ATT>
+                  <ATT name="TimeDate"></ATT>
+                  <ATT name="TimeDuration"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f9" mc="Standard.BpmnSequenceFlow" uid="c4b149a9-f682-4cd2-8d86-90fe422d5974"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f9]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Простой системы &gt; заданного" mc="Standard.BpmnStartEvent" uid="bb859c86-ef61-423e-8cdb-c0adbd281c48"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Составить запрос на сбор данных со станций" mc="Standard.BpmnTask" uid="989e9345-7fe2-42fa-b905-3fb7bed584f2"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Данные со станций собраны" mc="Standard.BpmnEndEvent" uid="aecce1b5-d33b-4a69-93c1-5518dbaf5748"/>
+          <ATTRIBUTES>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Данные со станций собраны]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="EventDefinitions">
+              <OBJECT>
+                <ID name="BpmnSignalEventDefinition" mc="Standard.BpmnSignalEventDefinition" uid="101141ff-afda-4b56-acf3-30bc6845e2d8"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[BpmnSignalEventDefinition]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f8" mc="Standard.BpmnSequenceFlow" uid="eda4a3a1-20de-4edb-ada6-f41022e6f772"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f8]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Записать данные" mc="Standard.BpmnTask" uid="806951cf-0c90-42aa-b09c-2b93139e5fb5"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Данные со станций собраны" mc="Standard.BpmnEndEvent" uid="aecce1b5-d33b-4a69-93c1-5518dbaf5748"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Составить список станций поставщиков и потребителей" mc="Standard.BpmnProcessDesignDiagram" uid="436f1f33-1ebc-438a-92c7-6f642c1b3049"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

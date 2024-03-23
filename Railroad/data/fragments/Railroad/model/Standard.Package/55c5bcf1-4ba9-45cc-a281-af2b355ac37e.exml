@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Classes" version="4">
+  <OBJECT>
+    <ID name="Classes" mc="Standard.Package" uid="55c5bcf1-4ba9-45cc-a281-af2b355ac37e"/>
+    <PID name="UML" mc="Standard.Package" uid="74200423-fb7e-4b88-b532-e249c5a1b3f8"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Classes]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <OBJECT>
+          <ID name="SchedulingStep" mc="Standard.Enumeration" uid="8744b913-2e3f-488c-986d-76ad02724681"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[SchedulingStep]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="Idling" mc="Standard.EnumerationLiteral" uid="fb6bb557-f463-4c1a-87ba-328e782f5ba1"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Idling]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="CollectingStationsData" mc="Standard.EnumerationLiteral" uid="d1c8c48b-1aae-4e40-ab62-80410aafef46"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[CollectingStationsData]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="CollectingRoadsData" mc="Standard.EnumerationLiteral" uid="e2a42f78-25aa-4674-9fbb-d85a0d7e3d11"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[CollectingRoadsData]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="CollectingTrainsData" mc="Standard.EnumerationLiteral" uid="7032cc80-b6e2-4e45-8c26-588caa961614"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[CollectingTrainsData]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="OptimizingRoutes" mc="Standard.EnumerationLiteral" uid="cb00e5bd-4851-45e4-ab39-a03d2d1ee42d"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[OptimizingRoutes]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="ApprovingRoutes" mc="Standard.EnumerationLiteral" uid="4049a302-793f-42a5-88f4-151faf66791f"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ApprovingRoutes]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="SendingRoutes" mc="Standard.EnumerationLiteral" uid="9fd63f50-17e6-4aab-b664-164ac0589ec7"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[SendingRoutes]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

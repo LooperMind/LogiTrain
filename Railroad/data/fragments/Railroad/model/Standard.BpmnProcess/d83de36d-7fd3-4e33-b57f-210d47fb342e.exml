@@ -1,0 +1,521 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Process1" version="4">
+  <OBJECT>
+    <ID name="Process1" mc="Standard.BpmnProcess" uid="d83de36d-7fd3-4e33-b57f-210d47fb342e"/>
+    <PID name="railroad" mc="Standard.Package" uid="082e1c2f-6028-4238-b23c-c91132df3126"/>
+    <ATTRIBUTES>
+      <ATT name="ProcessType">NoneProcess</ATT>
+      <ATT name="IsClosed">false</ATT>
+      <ATT name="IsExecutable">OUndefined</ATT>
+      <ATT name="IsReentrant">false</ATT>
+      <ATT name="Name"><![CDATA[Process1]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="LaneSet">
+        <OBJECT>
+          <ID name="" mc="Standard.BpmnLaneSet" uid="9a5c3706-28ac-4449-ab3d-eacd1e56c2a4"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Lane">
+              <OBJECT>
+                <ID name="Сеть для связи участников Ж/д логистики" mc="Standard.BpmnLane" uid="fd6ed810-748a-436b-adf1-35ad43c7e124"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Сеть для связи участников Ж/д логистики]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="FlowElementRef">
+                    <REFOBJ>
+                      <ID name="Отправить запрос о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="11dc20f8-8977-40da-89c7-515c180e989d"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Получить данные о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="cb1a32e8-5f24-4d17-88e3-9d635b48dc6e"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Вычислительный сервер" mc="Standard.BpmnLane" uid="713e655d-757a-4d5b-9e66-f351afc92be0"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Вычислительный сервер]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="FlowElementRef">
+                    <REFOBJ>
+                      <ID name="Данные со станций собраны" mc="Standard.BpmnStartEvent" uid="ff2c6f26-a208-425f-a663-42b6febd8f43"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Запросить данные о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="7b15260f-21f8-46a3-89ad-2dd443f9ea68"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Отправить данные в БД на запись" mc="Standard.BpmnTask" uid="d303d6f4-b7b2-4858-87e0-a8726f8349e6"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Данные о расстоянии и работоспособности Ж/Д путей" mc="Standard.BpmnDataObject" uid="be71f67c-7718-4eb9-a5d1-cb9b66683f8a"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Преобразовать данные во взвешанный граф" mc="Standard.BpmnTask" uid="119e5d41-2208-4793-914e-71d66051dda2"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Алгоритм преобразования" mc="Standard.BpmnDataInput" uid="b13a3268-cb41-4a16-aa13-81a0325b6dd3"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Структурированная информация о состоянии Ж/Д путей" mc="Standard.BpmnDataObject" uid="eff8c62b-9bef-4fbd-a5e6-18db692176cb"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="База данных и СУБД" mc="Standard.BpmnLane" uid="ab95d805-d73e-428a-bf75-a61b457e498e"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[База данных и СУБД]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="FlowElementRef">
+                    <REFOBJ>
+                      <ID name="Обновить данные БД о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="3c8b0ee5-b3e9-4485-a69e-d079e8d28e28"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Данные о путях собраны" mc="Standard.BpmnEndEvent" uid="bbd52b8a-0c0d-41b6-a862-3eb7f6ba7607"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="FlowElement">
+        <OBJECT>
+          <ID name="Данные со станций собраны" mc="Standard.BpmnStartEvent" uid="ff2c6f26-a208-425f-a663-42b6febd8f43"/>
+          <ATTRIBUTES>
+            <ATT name="IsInterrupting">false</ATT>
+            <ATT name="ParallelMultiple">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Данные со станций собраны]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="EventDefinitions">
+              <OBJECT>
+                <ID name="BpmnSignalEventDefinition" mc="Standard.BpmnSignalEventDefinition" uid="8fc7a06f-b80b-4371-90a9-73565fa6623e"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[BpmnSignalEventDefinition]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Запросить данные о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="7b15260f-21f8-46a3-89ad-2dd443f9ea68"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Запросить данные о состоянии Ж/Д путей]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f" mc="Standard.BpmnSequenceFlow" uid="a04ff394-e9d4-4931-8080-744d89a094e7"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Данные со станций собраны" mc="Standard.BpmnStartEvent" uid="ff2c6f26-a208-425f-a663-42b6febd8f43"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Запросить данные о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="7b15260f-21f8-46a3-89ad-2dd443f9ea68"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Отправить запрос о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="11dc20f8-8977-40da-89c7-515c180e989d"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Отправить запрос о состоянии Ж/Д путей]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f1" mc="Standard.BpmnSequenceFlow" uid="d61eb9ab-42b6-493c-9f39-aa074ee4259a"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Запросить данные о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="7b15260f-21f8-46a3-89ad-2dd443f9ea68"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Отправить запрос о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="11dc20f8-8977-40da-89c7-515c180e989d"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Получить данные о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="cb1a32e8-5f24-4d17-88e3-9d635b48dc6e"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Получить данные о состоянии Ж/Д путей]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DataInputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="7a7ee33c-f29e-4130-a946-1dfaf3dec705"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="TargetRef">
+                    <REFOBJ>
+                      <ID name="Данные о расстоянии и работоспособности Ж/Д путей" mc="Standard.BpmnDataObject" uid="be71f67c-7718-4eb9-a5d1-cb9b66683f8a"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f2" mc="Standard.BpmnSequenceFlow" uid="5bf939cb-1df7-4de8-9b17-ec86a3a684de"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Отправить запрос о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="11dc20f8-8977-40da-89c7-515c180e989d"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Получить данные о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="cb1a32e8-5f24-4d17-88e3-9d635b48dc6e"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Отправить данные в БД на запись" mc="Standard.BpmnTask" uid="d303d6f4-b7b2-4858-87e0-a8726f8349e6"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Отправить данные в БД на запись]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DataOutputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="dbacac45-f76e-41fc-b139-a2095e403713"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Структурированная информация о состоянии Ж/Д путей" mc="Standard.BpmnDataObject" uid="eff8c62b-9bef-4fbd-a5e6-18db692176cb"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Данные о расстоянии и работоспособности Ж/Д путей" mc="Standard.BpmnDataObject" uid="be71f67c-7718-4eb9-a5d1-cb9b66683f8a"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Данные о расстоянии и работоспособности Ж/Д путей]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Обновить данные БД о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="3c8b0ee5-b3e9-4485-a69e-d079e8d28e28"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Обновить данные БД о состоянии Ж/Д путей]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DataOutputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="61f96521-e36a-4cac-ac5a-40495fbf7459"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Структурированная информация о состоянии Ж/Д путей" mc="Standard.BpmnDataObject" uid="eff8c62b-9bef-4fbd-a5e6-18db692176cb"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Преобразовать данные во взвешанный граф" mc="Standard.BpmnTask" uid="119e5d41-2208-4793-914e-71d66051dda2"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Преобразовать данные во взвешанный граф]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DataInputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="7c229c42-babb-4ed1-9d8b-e9aa975e7cdc"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="TargetRef">
+                    <REFOBJ>
+                      <ID name="Структурированная информация о состоянии Ж/Д путей" mc="Standard.BpmnDataObject" uid="eff8c62b-9bef-4fbd-a5e6-18db692176cb"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="DataOutputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="84b34dc3-9c0a-4ac8-9340-284ff0f07906"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Алгоритм преобразования" mc="Standard.BpmnDataInput" uid="b13a3268-cb41-4a16-aa13-81a0325b6dd3"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="ba39c40d-6a7d-42f6-b7f6-507898c162a5"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Данные о расстоянии и работоспособности Ж/Д путей" mc="Standard.BpmnDataObject" uid="be71f67c-7718-4eb9-a5d1-cb9b66683f8a"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Алгоритм преобразования" mc="Standard.BpmnDataInput" uid="b13a3268-cb41-4a16-aa13-81a0325b6dd3"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Алгоритм преобразования]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f3" mc="Standard.BpmnSequenceFlow" uid="0c6af5c2-d290-4b02-94d8-36f0fe82fd84"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f3]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Получить данные о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="cb1a32e8-5f24-4d17-88e3-9d635b48dc6e"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Преобразовать данные во взвешанный граф" mc="Standard.BpmnTask" uid="119e5d41-2208-4793-914e-71d66051dda2"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f4" mc="Standard.BpmnSequenceFlow" uid="4694112b-6ec7-495d-9953-d0916ee23f74"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f4]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Преобразовать данные во взвешанный граф" mc="Standard.BpmnTask" uid="119e5d41-2208-4793-914e-71d66051dda2"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Отправить данные в БД на запись" mc="Standard.BpmnTask" uid="d303d6f4-b7b2-4858-87e0-a8726f8349e6"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Структурированная информация о состоянии Ж/Д путей" mc="Standard.BpmnDataObject" uid="eff8c62b-9bef-4fbd-a5e6-18db692176cb"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Структурированная информация о состоянии Ж/Д путей]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f5" mc="Standard.BpmnSequenceFlow" uid="60b8c084-363d-48ef-a88f-7e1c4269e3ca"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f5]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Отправить данные в БД на запись" mc="Standard.BpmnTask" uid="d303d6f4-b7b2-4858-87e0-a8726f8349e6"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Обновить данные БД о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="3c8b0ee5-b3e9-4485-a69e-d079e8d28e28"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Данные о путях собраны" mc="Standard.BpmnEndEvent" uid="bbd52b8a-0c0d-41b6-a862-3eb7f6ba7607"/>
+          <ATTRIBUTES>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Данные о путях собраны]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="EventDefinitions">
+              <OBJECT>
+                <ID name="BpmnSignalEventDefinition" mc="Standard.BpmnSignalEventDefinition" uid="e647abb4-e196-46d4-839b-e6bea309b9b7"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[BpmnSignalEventDefinition]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f6" mc="Standard.BpmnSequenceFlow" uid="73da25f1-49a2-47ac-b02d-71cb106877a2"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f6]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Обновить данные БД о состоянии Ж/Д путей" mc="Standard.BpmnTask" uid="3c8b0ee5-b3e9-4485-a69e-d079e8d28e28"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Данные о путях собраны" mc="Standard.BpmnEndEvent" uid="bbd52b8a-0c0d-41b6-a862-3eb7f6ba7607"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Составить взвешанный граф станций потребителей и поставщиков" mc="Standard.BpmnProcessDesignDiagram" uid="6684dc8f-3fb9-4aa1-ad1f-a7025e97f39a"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

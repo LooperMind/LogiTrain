@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Deployment" version="4">
+  <OBJECT>
+    <ID name="Deployment" mc="Standard.Package" uid="033f670c-a54d-4f13-ab89-5b0b80dfb274"/>
+    <PID name="UML" mc="Standard.Package" uid="74200423-fb7e-4b88-b532-e249c5a1b3f8"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Deployment]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Вычислительный сервер" mc="Standard.Node" uid="7d28c39e-0335-425e-bc7c-569b2f427092"/>
+        <COMPID name="Серверная операционная система" mc="Standard.Node" uid="5d3c5d2c-f99a-4063-a554-dcc65c8bf9e9"/>
+        <COMPID name="БД" mc="Standard.Component" uid="24d562c8-aaf7-400f-9dcc-96e1745d2ff7"/>
+        <COMPID name="Серверное приложение" mc="Standard.Component" uid="fb233243-9d92-4228-bcb7-13fc8cdaf40a"/>
+        <COMPID name="Клиентское приложение" mc="Standard.Component" uid="c1405297-03a8-48a4-a0e7-7e9e7a0e055d"/>
+        <COMPID name="Рабочая станция" mc="Standard.Node" uid="b7118cf6-f672-4847-b8db-33db0b8ea89d"/>
+        <COMPID name="Клиентская операционная система" mc="Standard.Node" uid="39922cda-19ce-4db4-ab85-a211659112c5"/>
+        <COMPID name="СУБД" mc="Standard.Component" uid="988a34b8-1c1d-4c95-ab86-cdc8ad9a93c3"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="UML Deployment diagram" mc="Standard.DeploymentDiagram" uid="fbc2b5e4-d068-4e4b-ba23-dc2c10a697b2"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

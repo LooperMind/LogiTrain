@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Use Cases" version="4">
+  <OBJECT>
+    <ID name="Use Cases" mc="Standard.Package" uid="0b82558a-6865-415a-8129-431871fb3683"/>
+    <PID name="UML" mc="Standard.Package" uid="74200423-fb7e-4b88-b532-e249c5a1b3f8"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Use Cases]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Провести составление и отправку расписания" mc="Standard.UseCase" uid="a4d526c2-5373-4c87-99e2-8cfcd61d63b2"/>
+        <COMPID name="Собрать данные со станций" mc="Standard.UseCase" uid="0fd93277-91c8-4976-9df1-1d36f0e1bfd8"/>
+        <COMPID name="Получить информацию о Ж/Д путях" mc="Standard.UseCase" uid="948d19db-1c55-4f02-a56d-20b4d3a36f73"/>
+        <COMPID name="Получить информацию о поездах" mc="Standard.UseCase" uid="0a00e88a-b9af-4005-84a3-164d6defea2d"/>
+        <COMPID name="Составить маршруты/расписание" mc="Standard.UseCase" uid="95076a0f-7f36-45a8-acf5-04c4b464fad0"/>
+        <COMPID name="Отправить расписание участникам" mc="Standard.UseCase" uid="f559b2c0-07a2-41ab-aaf2-9d46534d98d3"/>
+        <COMPID name="Выставить переодичность выполнения" mc="Standard.UseCase" uid="52112276-c55e-4f0e-92fd-d811b9b72641"/>
+        <COMPID name="Утвердить маршруты/расписание" mc="Standard.UseCase" uid="6044c4fe-c029-4b0f-98e3-ba835ddd48ce"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Серверное приложение" version="4">
+  <OBJECT>
+    <ID name="Серверное приложение" mc="Standard.Component" uid="fb233243-9d92-4228-bcb7-13fc8cdaf40a"/>
+    <PID name="Deployment" mc="Standard.Package" uid="033f670c-a54d-4f13-ab89-5b0b80dfb274"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Серверное приложение]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="StationDataCollector" mc="Standard.Class" uid="1c3cd585-e25f-46cd-82ac-592b2ccdb62c"/>
+        <COMPID name="RoadsDataCollector" mc="Standard.Class" uid="d880a58c-9c93-4a20-88f7-4cd9d7ec81d2"/>
+        <COMPID name="TrainDataCollector" mc="Standard.Class" uid="a3712740-91e4-488c-8e2b-747dd173ebce"/>
+        <COMPID name="ExternalDataManager" mc="Standard.Class" uid="f0dff1e5-9dff-4ff0-9de2-3cd2fc288f64"/>
+        <COMPID name="RouteOptimizer" mc="Standard.Class" uid="c7755996-f4fe-4278-b6b4-159b0b922b82"/>
+        <COMPID name="ScheduleSender" mc="Standard.Class" uid="9ea37a6f-5493-4436-8ec8-2bc03a6e86ba"/>
+        <COMPID name="SchedulingController" mc="Standard.Class" uid="3e08f99d-f8bf-4fd5-b758-c3af6d0fd3e0"/>
+        <COMPID name="StationData" mc="Standard.Class" uid="02245f96-0f53-4f5b-9303-101caaa307d6"/>
+        <COMPID name="RoadsData" mc="Standard.Class" uid="a9433da3-bb01-4eed-bf51-66152bd6f665"/>
+        <COMPID name="TrainData" mc="Standard.Class" uid="66fb6430-bfa5-47b4-abc3-5daba872ca32"/>
+        <COMPID name="RouteData" mc="Standard.Class" uid="1956adaa-915b-4015-ba06-4504e0a91ca9"/>
+        <COMPID name="InternalDatabaseConnector" mc="Standard.Class" uid="24cee696-2353-4d26-b6f6-ef71e509f69a"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,868 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Process2" version="4">
+  <OBJECT>
+    <ID name="Process2" mc="Standard.BpmnProcess" uid="4e004fc2-6461-420c-b3bb-f7f958e6c314"/>
+    <PID name="railroad" mc="Standard.Package" uid="082e1c2f-6028-4238-b23c-c91132df3126"/>
+    <ATTRIBUTES>
+      <ATT name="ProcessType">NoneProcess</ATT>
+      <ATT name="IsClosed">false</ATT>
+      <ATT name="IsExecutable">OUndefined</ATT>
+      <ATT name="IsReentrant">false</ATT>
+      <ATT name="Name"><![CDATA[Process2]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="LaneSet">
+        <OBJECT>
+          <ID name="" mc="Standard.BpmnLaneSet" uid="eab80296-7bdf-4b55-a3f3-53f1692bc900"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Lane">
+              <OBJECT>
+                <ID name="Сеть для связи участников Ж/Д логистики" mc="Standard.BpmnLane" uid="a4e9dbef-ad6b-4f71-8518-845d3c0876c7"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Сеть для связи участников Ж/Д логистики]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="FlowElementRef">
+                    <REFOBJ>
+                      <ID name="Выполнить запрос о занятости поездов и вагонов" mc="Standard.BpmnTask" uid="a6f19307-ae61-429b-92c3-602ad8c3deb8"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="Вычислительный сервер" mc="Standard.BpmnLane" uid="9702aa39-7149-4d8a-9f26-e9260d5330bc"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[Вычислительный сервер]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="FlowElementRef">
+                    <REFOBJ>
+                      <ID name="Данные о путях собраны" mc="Standard.BpmnStartEvent" uid="88338f25-14b9-43ae-a843-dca3b5b6d3ee"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Составить запрос на данные о имеющихся поездах и вагонах" mc="Standard.BpmnTask" uid="48edf4e5-b7eb-47b9-89db-01269adc0a03"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Parallel Gateway" mc="Standard.BpmnParallelGateway" uid="b4ffc1d2-2b1e-42ff-b18e-c4bdf3adc466"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Отправить запрос на данные о станциях и Ж/Д путях" mc="Standard.BpmnTask" uid="27d3e722-2113-4a04-97d4-09c259daef20"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Составить список всех потенциальных маршрутов" mc="Standard.BpmnTask" uid="e1ddfc0e-6784-40ed-a703-577ace532da7"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Расчётные алгоритмы" mc="Standard.BpmnDataInput" uid="62343394-ef57-4355-8cdc-600aab8af97e"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="" mc="Standard.BpmnInclusiveGateway" uid="f8df14bb-46fa-4d39-ae13-eb27ea3cfd97"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Данные о свободных поездах/вагонах" mc="Standard.BpmnDataObject" uid="719d51b2-b59c-401a-89fc-2c27ce82db9e"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Составить оптимальные потенциальные маршруты" mc="Standard.BpmnTask" uid="f315b903-9a7b-4120-be4d-ce5b2a35f0bb"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Потенциальные маршруты" mc="Standard.BpmnDataObject" uid="7a9a499c-c983-4678-9e77-f1f5de9bf69e"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Правила  ограничения Ж/Д логистики" mc="Standard.BpmnDataInput" uid="fae1e618-3cac-4d8f-814a-eaa1a8b1af7a"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Расчётные алгоритмы" mc="Standard.BpmnDataInput" uid="758d2d57-e67f-43bb-9c7d-fbfa44e46a34"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Отпарвить список маршрутов на запись в БД" mc="Standard.BpmnTask" uid="cf56e872-c3c7-4765-8d1b-5605046483d1"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Оптимизированный список маршрутов" mc="Standard.BpmnDataObject" uid="6a947f2c-8244-4fa2-9846-9a95f3a55e14"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="База данных и СУБД" mc="Standard.BpmnLane" uid="8eddaedc-fd25-4915-a708-5f030da9fd3d"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[База данных и СУБД]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="FlowElementRef">
+                    <REFOBJ>
+                      <ID name="Провести выборку данных по Ж/Д путям и дефициту товаров на станциях" mc="Standard.BpmnTask" uid="a128713b-c234-4702-8744-ca2458ec5ddf"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Взвешанный граф с информацией о станциях" mc="Standard.BpmnDataObject" uid="5151ff0a-a856-4f77-96f3-fef440f54325"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Записать маршурты" mc="Standard.BpmnTask" uid="372b1fbc-2e3c-4970-8479-095aeb842ac3"/>
+                    </REFOBJ>
+                    <REFOBJ>
+                      <ID name="Оптимизированные маршруты составлены" mc="Standard.BpmnEndEvent" uid="d278af5a-cabe-4718-b09e-2fda1286a7d2"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="FlowElement">
+        <OBJECT>
+          <ID name="Данные о путях собраны" mc="Standard.BpmnStartEvent" uid="88338f25-14b9-43ae-a843-dca3b5b6d3ee"/>
+          <ATTRIBUTES>
+            <ATT name="IsInterrupting">true</ATT>
+            <ATT name="ParallelMultiple">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Данные о путях собраны]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="EventDefinitions">
+              <OBJECT>
+                <ID name="BpmnSignalEventDefinition" mc="Standard.BpmnSignalEventDefinition" uid="1a43ef4b-5635-4c92-a6e9-8ab88e0ceeed"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[BpmnSignalEventDefinition]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Составить запрос на данные о имеющихся поездах и вагонах" mc="Standard.BpmnTask" uid="48edf4e5-b7eb-47b9-89db-01269adc0a03"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Составить запрос на данные о имеющихся поездах и вагонах]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f" mc="Standard.BpmnSequenceFlow" uid="2ee11e4c-9a66-4dd9-8146-92f091ac93fc"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Данные о путях собраны" mc="Standard.BpmnStartEvent" uid="88338f25-14b9-43ae-a843-dca3b5b6d3ee"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Parallel Gateway" mc="Standard.BpmnParallelGateway" uid="b4ffc1d2-2b1e-42ff-b18e-c4bdf3adc466"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Выполнить запрос о занятости поездов и вагонов" mc="Standard.BpmnTask" uid="a6f19307-ae61-429b-92c3-602ad8c3deb8"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Выполнить запрос о занятости поездов и вагонов]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DataInputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="de3fee4b-c40a-4b08-a523-2fc1711f9770"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="TargetRef">
+                    <REFOBJ>
+                      <ID name="Данные о свободных поездах/вагонах" mc="Standard.BpmnDataObject" uid="719d51b2-b59c-401a-89fc-2c27ce82db9e"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f1" mc="Standard.BpmnSequenceFlow" uid="40476b53-ad06-4d72-972a-8cf423164d49"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Составить запрос на данные о имеющихся поездах и вагонах" mc="Standard.BpmnTask" uid="48edf4e5-b7eb-47b9-89db-01269adc0a03"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Выполнить запрос о занятости поездов и вагонов" mc="Standard.BpmnTask" uid="a6f19307-ae61-429b-92c3-602ad8c3deb8"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Parallel Gateway" mc="Standard.BpmnParallelGateway" uid="b4ffc1d2-2b1e-42ff-b18e-c4bdf3adc466"/>
+          <ATTRIBUTES>
+            <ATT name="GatewayDirection">UnspecifiedDirection</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Parallel Gateway]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f2" mc="Standard.BpmnSequenceFlow" uid="593894b5-63d3-4329-8bc6-b5795c624e74"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Parallel Gateway" mc="Standard.BpmnParallelGateway" uid="b4ffc1d2-2b1e-42ff-b18e-c4bdf3adc466"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Составить запрос на данные о имеющихся поездах и вагонах" mc="Standard.BpmnTask" uid="48edf4e5-b7eb-47b9-89db-01269adc0a03"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Отправить запрос на данные о станциях и Ж/Д путях" mc="Standard.BpmnTask" uid="27d3e722-2113-4a04-97d4-09c259daef20"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Отправить запрос на данные о станциях и Ж/Д путях]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f3" mc="Standard.BpmnSequenceFlow" uid="9581e8aa-8569-4d6f-a5c4-70d38d1d82dd"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f3]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Parallel Gateway" mc="Standard.BpmnParallelGateway" uid="b4ffc1d2-2b1e-42ff-b18e-c4bdf3adc466"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Отправить запрос на данные о станциях и Ж/Д путях" mc="Standard.BpmnTask" uid="27d3e722-2113-4a04-97d4-09c259daef20"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Провести выборку данных по Ж/Д путям и дефициту товаров на станциях" mc="Standard.BpmnTask" uid="a128713b-c234-4702-8744-ca2458ec5ddf"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Провести выборку данных по Ж/Д путям и дефициту товаров на станциях]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DataInputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="17939554-9fdd-4b41-8460-c96f19592297"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="TargetRef">
+                    <REFOBJ>
+                      <ID name="Взвешанный граф с информацией о станциях" mc="Standard.BpmnDataObject" uid="5151ff0a-a856-4f77-96f3-fef440f54325"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f4" mc="Standard.BpmnSequenceFlow" uid="afec073d-7b66-4cdd-a3d9-784aff8dc0db"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f4]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Отправить запрос на данные о станциях и Ж/Д путях" mc="Standard.BpmnTask" uid="27d3e722-2113-4a04-97d4-09c259daef20"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Провести выборку данных по Ж/Д путям и дефициту товаров на станциях" mc="Standard.BpmnTask" uid="a128713b-c234-4702-8744-ca2458ec5ddf"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Составить список всех потенциальных маршрутов" mc="Standard.BpmnTask" uid="e1ddfc0e-6784-40ed-a703-577ace532da7"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Составить список всех потенциальных маршрутов]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DataInputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="9bda508a-ebd1-4113-bfce-7a580d6dceae"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="TargetRef">
+                    <REFOBJ>
+                      <ID name="Потенциальные маршруты" mc="Standard.BpmnDataObject" uid="7a9a499c-c983-4678-9e77-f1f5de9bf69e"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="DataOutputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="5607b1a0-c8c6-41e4-a448-80339705d9a0"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Расчётные алгоритмы" mc="Standard.BpmnDataInput" uid="62343394-ef57-4355-8cdc-600aab8af97e"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="a84a2dd6-6856-49e7-99cf-588e6ead7c06"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Взвешанный граф с информацией о станциях" mc="Standard.BpmnDataObject" uid="5151ff0a-a856-4f77-96f3-fef440f54325"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="b8d23b3a-62ec-461e-9c25-e54e85dfdc04"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Правила  ограничения Ж/Д логистики" mc="Standard.BpmnDataInput" uid="fae1e618-3cac-4d8f-814a-eaa1a8b1af7a"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f5" mc="Standard.BpmnSequenceFlow" uid="1b310599-1854-4a7e-8825-090cb4cea67b"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f5]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Провести выборку данных по Ж/Д путям и дефициту товаров на станциях" mc="Standard.BpmnTask" uid="a128713b-c234-4702-8744-ca2458ec5ddf"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Составить список всех потенциальных маршрутов" mc="Standard.BpmnTask" uid="e1ddfc0e-6784-40ed-a703-577ace532da7"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Расчётные алгоритмы" mc="Standard.BpmnDataInput" uid="62343394-ef57-4355-8cdc-600aab8af97e"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Расчётные алгоритмы]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Standard.BpmnInclusiveGateway" uid="f8df14bb-46fa-4d39-ae13-eb27ea3cfd97"/>
+          <ATTRIBUTES>
+            <ATT name="GatewayDirection">UnspecifiedDirection</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f6" mc="Standard.BpmnSequenceFlow" uid="903e26dc-f099-4f37-8026-3d7d22dec28a"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f6]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Составить список всех потенциальных маршрутов" mc="Standard.BpmnTask" uid="e1ddfc0e-6784-40ed-a703-577ace532da7"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="" mc="Standard.BpmnInclusiveGateway" uid="f8df14bb-46fa-4d39-ae13-eb27ea3cfd97"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f7" mc="Standard.BpmnSequenceFlow" uid="96cdf6b4-827c-427a-a9a3-5640e433e383"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f7]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Выполнить запрос о занятости поездов и вагонов" mc="Standard.BpmnTask" uid="a6f19307-ae61-429b-92c3-602ad8c3deb8"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="" mc="Standard.BpmnInclusiveGateway" uid="f8df14bb-46fa-4d39-ae13-eb27ea3cfd97"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Данные о свободных поездах/вагонах" mc="Standard.BpmnDataObject" uid="719d51b2-b59c-401a-89fc-2c27ce82db9e"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Данные о свободных поездах/вагонах]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Составить оптимальные потенциальные маршруты" mc="Standard.BpmnTask" uid="f315b903-9a7b-4120-be4d-ce5b2a35f0bb"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Составить оптимальные потенциальные маршруты]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DataInputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="c175beee-ffdc-4c09-b362-4a5e03cb9a67"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="TargetRef">
+                    <REFOBJ>
+                      <ID name="Оптимизированный список маршрутов" mc="Standard.BpmnDataObject" uid="6a947f2c-8244-4fa2-9846-9a95f3a55e14"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="DataOutputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="de7bce5e-6c6e-44be-a8f5-264ad12bd838"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Взвешанный граф с информацией о станциях" mc="Standard.BpmnDataObject" uid="5151ff0a-a856-4f77-96f3-fef440f54325"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="6f834b8d-3cdb-434e-96fc-20f19ba617f5"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Потенциальные маршруты" mc="Standard.BpmnDataObject" uid="7a9a499c-c983-4678-9e77-f1f5de9bf69e"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="f0bb7184-4593-4c45-8ffc-2adba868b19b"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Данные о свободных поездах/вагонах" mc="Standard.BpmnDataObject" uid="719d51b2-b59c-401a-89fc-2c27ce82db9e"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="d690565a-f4b6-4c14-b663-ba148ffd8f62"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Расчётные алгоритмы" mc="Standard.BpmnDataInput" uid="758d2d57-e67f-43bb-9c7d-fbfa44e46a34"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f8" mc="Standard.BpmnSequenceFlow" uid="8e9fd4ed-2b8a-4e84-a13f-95b629de7dd6"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f8]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="" mc="Standard.BpmnInclusiveGateway" uid="f8df14bb-46fa-4d39-ae13-eb27ea3cfd97"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Составить оптимальные потенциальные маршруты" mc="Standard.BpmnTask" uid="f315b903-9a7b-4120-be4d-ce5b2a35f0bb"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Потенциальные маршруты" mc="Standard.BpmnDataObject" uid="7a9a499c-c983-4678-9e77-f1f5de9bf69e"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Потенциальные маршруты]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Взвешанный граф с информацией о станциях" mc="Standard.BpmnDataObject" uid="5151ff0a-a856-4f77-96f3-fef440f54325"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Взвешанный граф с информацией о станциях]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Правила  ограничения Ж/Д логистики" mc="Standard.BpmnDataInput" uid="fae1e618-3cac-4d8f-814a-eaa1a8b1af7a"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Правила  ограничения Ж/Д логистики]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Расчётные алгоритмы" mc="Standard.BpmnDataInput" uid="758d2d57-e67f-43bb-9c7d-fbfa44e46a34"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Расчётные алгоритмы]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Отпарвить список маршрутов на запись в БД" mc="Standard.BpmnTask" uid="cf56e872-c3c7-4765-8d1b-5605046483d1"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Отпарвить список маршрутов на запись в БД]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DataOutputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="d0664f43-02dd-4980-b012-0c310d6991a1"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Оптимизированный список маршрутов" mc="Standard.BpmnDataObject" uid="6a947f2c-8244-4fa2-9846-9a95f3a55e14"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f9" mc="Standard.BpmnSequenceFlow" uid="e5d3798d-b004-4922-a85f-5d36683eb8b6"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f9]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Составить оптимальные потенциальные маршруты" mc="Standard.BpmnTask" uid="f315b903-9a7b-4120-be4d-ce5b2a35f0bb"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Отпарвить список маршрутов на запись в БД" mc="Standard.BpmnTask" uid="cf56e872-c3c7-4765-8d1b-5605046483d1"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Записать маршурты" mc="Standard.BpmnTask" uid="372b1fbc-2e3c-4970-8479-095aeb842ac3"/>
+          <ATTRIBUTES>
+            <ATT name="IsGlobal">false</ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Записать маршурты]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="DataOutputAssociation">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnDataAssociation" uid="8b1934a9-ecf4-4e0e-a7e2-f4ff49bc4b19"/>
+                <ATTRIBUTES>
+                  <ATT name="Assignment"></ATT>
+                  <ATT name="Transfomation"></ATT>
+                  <ATT name="Language"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="SourceRef">
+                    <REFOBJ>
+                      <ID name="Оптимизированный список маршрутов" mc="Standard.BpmnDataObject" uid="6a947f2c-8244-4fa2-9846-9a95f3a55e14"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f10" mc="Standard.BpmnSequenceFlow" uid="ecc1eeb1-ed1c-42c6-9157-7eb49b19445e"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f10]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Отпарвить список маршрутов на запись в БД" mc="Standard.BpmnTask" uid="cf56e872-c3c7-4765-8d1b-5605046483d1"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Записать маршурты" mc="Standard.BpmnTask" uid="372b1fbc-2e3c-4970-8479-095aeb842ac3"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Оптимизированные маршруты составлены" mc="Standard.BpmnEndEvent" uid="d278af5a-cabe-4718-b09e-2fda1286a7d2"/>
+          <ATTRIBUTES>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Оптимизированные маршруты составлены]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="EventDefinitions">
+              <OBJECT>
+                <ID name="BpmnSignalEventDefinition" mc="Standard.BpmnSignalEventDefinition" uid="8daf507f-92ca-4718-995f-f42f2427b8cb"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[BpmnSignalEventDefinition]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f11" mc="Standard.BpmnSequenceFlow" uid="ee277842-5cd7-491c-8dc7-38871bd63c3c"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f11]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Записать маршурты" mc="Standard.BpmnTask" uid="372b1fbc-2e3c-4970-8479-095aeb842ac3"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Оптимизированные маршруты составлены" mc="Standard.BpmnEndEvent" uid="d278af5a-cabe-4718-b09e-2fda1286a7d2"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Оптимизированный список маршрутов" mc="Standard.BpmnDataObject" uid="6a947f2c-8244-4fa2-9846-9a95f3a55e14"/>
+          <ATTRIBUTES>
+            <ATT name="IsCollection">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Оптимизированный список маршрутов]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Определить целесообразные маршруты" mc="Standard.BpmnProcessDesignDiagram" uid="527abb98-b428-4cac-b50b-37db15964ad7"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

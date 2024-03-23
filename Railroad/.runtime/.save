@@ -1,0 +1,10 @@
+#Tue Nov 28 23:11:39 KRAT 2023
+org.modelio.app.diagram.editor.OpenedDiagrams0='UML Use Case diagram' {46ed038a-d523-4ee4-93bd-7beb167e57ba} Standard.UseCaseDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams3='\u0421\u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043C\u0430\u0440\u0448\u0440\u0443\u0442' {a995e188-56f1-4d00-b888-195fdd7854a9} Standard.ActivityDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams4='\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0440\u0430\u0441\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0430\u043C Activity diagram' {042b2d1a-ca94-4c8d-96ea-4cdc04bc89c7} Standard.ActivityDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams1='UML Class diagram' {c65f6d0d-78ec-484e-acba-6310c67ae188} Standard.ClassDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams2='\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u0434\u0430\u043D\u043D\u044B\u0435 \u0441\u043E \u0441\u0442\u0430\u043D\u0446\u0438\u0439 Activity diagram' {c202c47a-9ec1-4fd8-b932-917f00092341} Standard.ActivityDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams7='\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0440\u0430\u0441\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A\u0430\u043C Sequence diagram' {3d6c0282-8873-4ac0-b40a-688be1dd5572} Standard.SequenceDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams8='UML Deployment diagram' {fbc2b5e4-d068-4e4b-ba23-dc2c10a697b2} Standard.DeploymentDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams5='\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u0434\u0430\u043D\u043D\u044B\u0435 \u0441\u043E \u0441\u0442\u0430\u043D\u0446\u0438\u0439 Sequence diagram' {88d8abe8-ba15-40dc-bf97-e1ec7513bf8f} Standard.SequenceDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams6='\u0421\u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043C\u0430\u0440\u0448\u0440\u0443\u0442\u044B/\u0440\u0430\u0441\u043F\u0438\u0441\u0430\u043D\u0438\u0435 Sequence diagram' {041d4cb4-0bf8-4d48-81af-50935316121e} Standard.SequenceDiagram
